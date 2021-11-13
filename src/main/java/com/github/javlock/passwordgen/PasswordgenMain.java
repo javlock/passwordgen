@@ -37,9 +37,7 @@ public class PasswordgenMain extends JFrame {
 	private static int lenMax = 100;
 
 	private static OPTIONS gui = OPTIONS.GUI;
-	private static int count = 10;
-
-	// private static final Random r = new Random();
+	private static int count = 1000;
 
 	public static int gen(int min, int max) {
 		if (min >= max) {
@@ -68,7 +66,7 @@ public class PasswordgenMain extends JFrame {
 			for (int i = 0; i < count; i++) {
 				int len = gen(lenMin, lenMax);
 				String pass = generatePassword(len, ALPHA_CAPS + ALPHA + SPECIAL_CHARS);
-				LOGGER.info("[{}]", pass);
+				LOGGER.info("[{}] [{}]", len, pass);
 			}
 		} else if (gui == OPTIONS.GUI) {
 			new PasswordgenMain().setVisible(true);
